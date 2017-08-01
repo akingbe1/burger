@@ -35,9 +35,20 @@ router.put("/burgers/update/:id", function(req, res) {
 });
 router.delete("/burgers/delete/:id", function(req, res) {
   var condition = "id = " + req.params.id;
-  burger.delete(condition, function() {
+  burger.destroy(condition, function() {
     res.redirect("/burgers");
   });
 });
 // Export routes for server.js to use.
 module.exports = router;
+
+
+// router.delete('/delete/:id', function(req, res){
+//   Burger.destroy({
+//     where:{
+//       id: [req.params.id]
+//     }
+//   });
+
+//   res.redirect('/');
+// });

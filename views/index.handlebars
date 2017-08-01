@@ -50,6 +50,26 @@
 </div>
 
 
+  <div class="col s6 center-align">
+    <ul>
+      {{#each brgr}}
+        {{#if this.devoured}}
+          <div class="card light-green lighten-2">
+            <p class="grey-text">
+              {{this.id}}. {{this.burger_name}}
+
+              <form action="delete/{{this.id}}?_method=DELETE" method="POST">
+                <button type="submit">Remove</button>
+              </form>
+            </p>
+          </div>
+        {{/if}}
+      {{/each}}
+    </ul>
+  </div>
+</div>
+
+
 <h2>Add a Burger</h2>
 <form action="burgers/create/" method="POST">
 
